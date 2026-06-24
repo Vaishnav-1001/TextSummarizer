@@ -20,7 +20,7 @@ def home(request):
             inputs = tokenizer(raw_text, return_tensors="pt", max_length=1024, truncation=True)
             
             # 3. Generate the summary
-            outputs = model.generate(inputs.input_ids, max_length=130, min_length=30, do_sample=False)
+            outputs = model.generate(inputs.input_ids, max_length=200, min_length=30, do_sample=False)
             
             # 4. Decode the numbers back into English text
             summary = tokenizer.decode(outputs[0], skip_special_tokens=True)
